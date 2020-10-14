@@ -1,37 +1,57 @@
-apiVersion: backstage.io/v1alpha1
+apiVersion: backstage.io/v0
 kind: Component
 metadata:
-  name: backstage-poc
-  description: backstage-poc
+  name: project-python
+  product_name: project-python-app
+  description: project-python
   technical_manager: gabriela
-  references: 
+  links: 
     - https://github.com/backstage-poc/
   pci_l1: true
   pci_extended: true
-  issox: true
+  version: 1
   labels:
     system: public-websites
   annotations:
-    example.com/service-discovery: backstage-poc
-    backstage.io/managed-by-location: https://github.com/gabicavalcante/backstage-poc/blob/master/catalog-info.yaml
-    github.com/project-slug: gabicavalcante/backstage-poc
+    example.com/service-discovery: project-python
+    backstage.io/managed-by-location: https://github.com/backstage-poc/project-python/blob/master/catalog-info.yaml
+    github.com/project-slug: project-python/project-python
   tags:
     - python
     - poc
+  resources:
+    resource:
+      name: Name
+      id: 1
+      description: description
+      type: service
+      gui: true
+      issox: true
+      owner: gabriela
+      lifecycle: production
+      pipeline: 
+      cloud:
+        name: cloud
+        id: id-cloud
+      databases:
+        - db1
+        - db2
+      authentication: auth-provider
+      authorization: auth-provider
 spec:
   type: website
   lifecycle: production
-  owner: flask-blueprint@example.com
+  owner: project-python@example.com
   definition: |
     openapi: "3.0.0"
     info:
       version: 1.0.0
-      title: Artist API
+      title: Project Python API
       license:
         name: MIT
     servers:
-      - url: http://flask-blueprint/v1
+      - url: http://project-python/v1
     paths:
-      /artists:
+      /books:
         get:
-          summary: List all artists
+          summary: List all books
