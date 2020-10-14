@@ -4,11 +4,6 @@ metadata:
   name: backstage-poc
   description: backstage-poc
   technical_manager: gabriela
-  references: 
-    - https://github.com/gabicavalcante/backstage-poc
-  pci_l1: true
-  pci_extended: true
-  issox: true
   labels:
     system: public-websites
   annotations:
@@ -18,11 +13,6 @@ metadata:
   tags:
     - python
     - poc
-  resources:
-    resource:
-      name: Name
-      id: 1
-      description: description
 spec:
   type: website
   lifecycle: production
