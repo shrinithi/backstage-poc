@@ -1,57 +1,27 @@
-apiVersion: backstage.io/v0
-kind: Component
+apiVersion: backstage.io/v1alpha1
+kind: Template
 metadata:
-  name: project-python
-  product_name: project-python-app
-  description: project-python
-  technical_manager: gabriela
-  links: 
-    - https://github.com/backstage-poc/
-  pci_l1: true
-  pci_extended: true
-  version: 1
-  labels:
-    system: public-websites
-  annotations:
-    example.com/service-discovery: project-python
-    backstage.io/managed-by-location: https://github.com/backstage-poc/project-python/blob/master/catalog-info.yaml
-    github.com/project-slug: project-python/project-python
+  name: react-ssr-template-scaffolder
+  title: React SSR Template
+  description: Create a website powered with Next.js
   tags:
-    - python
-    - poc
-  resources:
-    resource:
-      name: Name
-      id: 1
-      description: description
-      type: service
-      gui: true
-      issox: true
-      owner: gabriela
-      lifecycle: production
-      pipeline: 
-      cloud:
-        name: cloud
-        id: id-cloud
-      databases:
-        - db1
-        - db2
-      authentication: auth-provider
-      authorization: auth-provider
+    - recommended
+    - react
 spec:
+  owner: web@example.com
+  templater: cookiecutter
   type: website
-  lifecycle: production
-  owner: project-python@example.com
-  definition: |
-    openapi: "3.0.0"
-    info:
-      version: 1.0.0
-      title: Project Python API
-      license:
-        name: MIT
-    servers:
-      - url: http://project-python/v1
-    paths:
-      /books:
-        get:
-          summary: List all books
+  path: '.'
+  schema:
+    required:
+      - component_id
+      - description
+    properties:
+      component_id:
+        title: Name
+        type: string
+        description: Unique name of the component
+      description:
+        title: Description
+        type: string
+        description: Help others understand what this website is for.
