@@ -1,3 +1,3 @@
 # backstage-poc
 
-App para fazer prova de conceito do backstage
+proof of concept of [backstage](https://github.com/spotify/backstage)
